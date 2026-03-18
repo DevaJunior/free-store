@@ -1,0 +1,55 @@
+/* frontend/src/index.css */
+
+/* Importa a fonte do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+
+:root {
+  --background-color: #f9f9f9;
+  --text-color: #111111;
+  --card-background: #FFFFFF;
+  --border-color: #e5e5e5;
+  --font-primary: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  min-height: calc(100vh - 80px); /* Subtrai a altura do header */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-primary);
+}
+
+/* --- Responsividade Global --- */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 0 1rem;
+  }
+}

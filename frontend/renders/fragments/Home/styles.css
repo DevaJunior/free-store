@@ -1,0 +1,275 @@
+/* frontend/src/pages/Home/styles.css */
+
+.home-page {
+  padding-bottom: 4rem;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 60vh;
+  min-height: 400px;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?fit=crop&w=1440');
+  background-size: cover;
+  background-position: center 30%;
+  border-radius: 20px;
+  margin-top: 2rem;
+  overflow: hidden; /* Garante que a imagem não vaze */
+}
+
+.hero-content {
+  color: white;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+/* --- New Drops Section --- */
+.new-drops-section {
+  margin-top: 4rem;
+}
+
+.section-header {
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.products-grid {
+  margin: 0 auto;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  /* border: solid 1px red; */
+}
+
+/* --- Testimonials Images Section (Image 2) --- */
+.testimonials-images-section {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: flex;
+  flex-wrap: nowrap; /* Impede que os itens quebrem a linha */
+  gap: 1rem;
+  margin-bottom: 3rem;
+  overflow-x: auto; /* Adiciona scroll horizontal se não couber */
+  padding-bottom: 1rem; /* Espaço para a barra de scroll */
+  -webkit-overflow-scrolling: touch; /* Melhor scroll em iOS */
+}
+
+/* Esconde a barra de rolagem para navegadores modernos */
+.testimonials-grid::-webkit-scrollbar {
+  display: none;
+}
+.testimonials-grid {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.grid-item {
+  flex-shrink: 0; /* Impede que os itens encolham */
+  width: 150px; /* Largura padrão */
+  height: 200px; /* Altura padrão */
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #eee;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.grid-item.tall {
+  height: 300px; /* Itens mais altos */
+}
+
+.grid-item.small-tall {
+  height: 250px; /* Itens com altura intermediária */
+}
+
+.testimonials-intro {
+  max-width: 600px;
+}
+
+.testimonials-tag {
+  background-color: #f0f0f0;
+  color: #555;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.testimonials-intro h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.testimonials-intro p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* --- Actual Testimonials Section (Image 3) --- */
+.actual-testimonials-section {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.testimonial-card {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.testimonial-card .stars {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  flex-grow: 1;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--border-color);
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.author-role {
+  font-size: 0.875rem;
+  color: #777;
+}
+
+
+/* --- Responsividade da Home (Completa) --- */
+@media (max-width: 1024px) {
+  .hero-content h1 { font-size: 4rem; }
+  .hero-content h2 { font-size: 2.5rem; }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .actual-testimonials-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .testimonials-intro h2 { font-size: 2rem; }
+  .testimonials-intro p { font-size: 1.2rem; }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 40vh;
+    min-height: 300px;
+    margin-top: 1rem;
+  }
+  .hero-content h1 { font-size: 2.5rem; }
+  .hero-content h2 { font-size: 1.5rem; }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .testimonials-intro h2 { font-size: 1.8rem; }
+  .testimonials-intro p { font-size: 1rem; }
+  .actual-testimonials-section {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  .testimonials-images-section {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 1.8rem; letter-spacing: 1px;}
+  .hero-content h2 { font-size: 1.2rem; letter-spacing: 1px;}
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .new-drops-section .section-header {
+    margin-bottom: 1.5rem;
+  }
+  .new-drops-section .section-header h2 {
+    font-size: 1.2rem;
+  }
+  .testimonials-intro h2 { font-size: 1.5rem; }
+  .testimonials-intro p { font-size: 0.9rem; }
+  .testimonials-grid {
+    width: 100%; /* Permite que o grid use toda a largura */
+    justify-content: center; /* Centraliza os itens quando há espaço */
+  }
+  .grid-item {
+    width: 120px;
+    height: 160px;
+  }
+  .grid-item.tall {
+    height: 240px;
+  }
+  .grid-item.small-tall {
+    height: 200px;
+  }
+}
